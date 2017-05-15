@@ -9,4 +9,4 @@ jobs:
       - run: echo $GOROOT
       - run: pwd
       - run: go get github.com/golang/lint/golint
-      - run: echo pwd && cd ~/$GOPATH/src/github.com/moby/tool && ls -la && pwd && make test
+      - run: pwd && cd ~/$GOPATH/src/github.com/moby/tool && ls -la && pwd && make test
