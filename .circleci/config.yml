@@ -2,7 +2,6 @@ version: 2
 executorType: machine
 jobs:
   build:
-    working_directory: $GOPATH/src/github.com/moby/tool
     steps:
       - checkout
       - run: go get github.com/golang/lint/golint
