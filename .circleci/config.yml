@@ -1,4 +1,5 @@
 version: 2
+executorType: machine
 jobs:
   build:
     working_directory: /go/src/github.com/moby/tool
