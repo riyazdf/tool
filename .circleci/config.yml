@@ -7,4 +7,6 @@ jobs:
       - checkout
       - run: cd $GOPATH/src/github.com/moby/tool
       - run: go get github.com/golang/lint/golint
+      - run: ls -la
+      - run: cat Makefile
       - run: make test
