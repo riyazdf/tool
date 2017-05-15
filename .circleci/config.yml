@@ -2,11 +2,10 @@ version: 2
 executorType: machine
 jobs:
   build:
-    working_directory: /home/circleci/.go_workspace/src/github.com/moby/tool
+    environment:
+      GOPATH: /home/circleci/.go_workspace
+    working_directory: $GOPATH/src/github.com/moby/tool
     steps:
       - checkout
-      - run: echo $GOPATH
-      - run: echo $GOROOT
-      - run: pwd
       - run: go get github.com/golang/lint/golint
-      - run: pwd && cd /home/circleci/.go_workspace/src/github.com/moby/tool && ls -la && pwd && make test
+      - run: make test
