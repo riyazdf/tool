@@ -2,7 +2,11 @@ version: 2
 executorType: machine
 jobs:
   build:
+    working_directory: ~/$GOPATH/src/github.com/moby/tool
     steps:
       - checkout
+      - run: echo $GOPATH
+      - run: echo $GOROOT
+      - run: pwd
       - run: go get github.com/golang/lint/golint
-      - run: cd $GOPATH/src/github.com/moby/tool && ls -la && pwd && make test
+      - run: echo pwd && cd ~/$GOPATH/src/github.com/moby/tool && ls -la && pwd && make test
