@@ -5,7 +5,6 @@ jobs:
     working_directory: $GOPATH/src/github.com/moby/tool
     steps:
       - checkout
-      - run: cd $GOPATH/src/github.com/moby/tool
       - run: go get github.com/golang/lint/golint
       - run: ls -la
       - run: cat Makefile
